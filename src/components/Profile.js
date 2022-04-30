@@ -2,6 +2,7 @@ import React from "react";
 import "./Profile.css";
 
 const Profile = () => {
+  const img = 'https://avatars.githubusercontent.com/u/79997474?s=64&v=4'
   return (
     <div className="profile-wrap">
       <div className="row fate">
@@ -28,7 +29,7 @@ const Profile = () => {
           <hr />
         </div>
       </div>
-      <div className="row fate">
+      <div className="row fate main-section">
         <div className="col-md-3 pic-section">
           <div className="profile-img-wrap">
             <div className="profile-image"></div>
@@ -36,16 +37,31 @@ const Profile = () => {
               <i className="fa-regular fa-face-grin-wide"></i>
             </div>
           </div>
-
-          <h5 className="profile-name">Enobaks</h5>
-          <button>Edit profile</button>
-          <div className="follow-section">
-            <i class="fa-light fa-user-group"></i>
-            <p>4 followers</p>
-            <span>.</span>
-            <p> 2 following</p>
-            <hr />
+          <h5 className="profile-name mb-3">Enobaks</h5>
+          <button className="btn btn-block">Edit profile</button>
+          <div className="follow-section mt-3 mb-5">
+            <svg
+              text="muted"
+              aria-hidden="true"
+              height="16"
+              viewBox="0 0 16 16"
+              version="1.1"
+              width="16"
+              data-view-component="true"
+              class="octicon octicon-people"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"
+              ></path>
+            </svg>
+            <span><b>4</b> followers </span>.
+            <span><b>2</b> following</span>
+          </div>
+          <hr />
+          <div className="organisation-wrap">
             <h5>Organizations</h5>
+            <img className="img" src={img} alt="" width={32} height={32}/>
           </div>
         </div>
         <div className="col-md-9 repo-section">
