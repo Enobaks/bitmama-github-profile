@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #57606a;
+    --neutral-color: rgb(239, 241, 243)
+}
 *{
     margin: 0;
     padding: 0;
@@ -14,8 +18,22 @@
 .route-links{
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 60%;
+    margin-right: 14rem;
+}
+.route-links li{
+    margin: 0 1rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+.route-links li:hover{
+    background-color: var(--neutral-color);
+}
+.nav-icon{
+    color: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
+    margin-right: .5rem;
 }
 .pic-section{
     background-color: bisque;
@@ -52,6 +70,9 @@ justify-content: center;
 .profile-name{
     text-align: left !important;
 }
+.line{
+    margin: 0 !important
+}
 .btn-block{
     border-color: #2a2d30;
     display: block !important;
@@ -81,4 +102,61 @@ white-space: nowrap;
 }
 .organisation-wrap h5{
     text-align: left;
+}
+.counter{
+    display: inline-block;
+min-width: 20px;
+padding: 0 6px;
+font-size: 12px;
+/* font-weight: 500; */
+line-height: 18px;
+color: var(--color-fg-default);
+text-align: center;
+background-color: var(--neutral-color);
+/* border: 1px solid var(--primary-color); */
+border-radius: 2em;
+margin-left: 8px;
+}
+.input-wrap{
+    display: flex;
+    height: 2.3rem;
+    margin-top: 1rem;
+}
+.repos-filter{
+    line-height: 20px;
+    display: inline-block;
+    width: 45%;
+    margin-right: 1rem;
+}
+.input-wrap select{
+ margin-right: 5px;
+}
+#sort{
+    margin-right: 20px;
+}
+.new-btn{
+    color: #fff;
+    padding: 5px 16px !important;
+    display: flex;
+    align-items: center;
+}
+.new-icon{
+    fill: #fff;
+    margin-right: 4px;
+}
+.repo-wrap{
+    width: 100%;
+    display: flex;
+}
+.heading{
+    width: 70%;text-align: left;
+}
+.title h3{
+    font-weight: 600 !important;
+}
+.star{
+    width: 30%;
+}
+.filter-line{
+    width: 90%;
 }
