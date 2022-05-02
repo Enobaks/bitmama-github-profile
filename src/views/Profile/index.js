@@ -1,9 +1,22 @@
-import React from "react";
-import "./Profile.css";
-import Star from "../assets/star-graph.png";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import UserDispatch from "../../redux/users/actions";
+import "./index.css";
 
-const Profile = () => {
-  const img = "https://avatars.githubusercontent.com/u/79997474?s=64&v=4";
+const Profile = (props) => {
+  const img = 'https://avatars.githubusercontent.com/u/79997474?s=64&v=4'
+  
+  let dispatch = useDispatch();
+  let store = useSelector(state=>state);
+  let payload = store.user;
+  let user = payload.data;
+
+  useEffect(()=>{
+    dispatch(UserDispatch.getUser({
+      user: "Enobaks"
+    }))
+  },[dispatch]);
+  
   return (
     <div className="profile-wrap">
       <div className="row fate">
