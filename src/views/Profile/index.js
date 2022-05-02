@@ -1,8 +1,22 @@
-import React from "react";
-import "./Profile.css";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import UserDispatch from "../../redux/users/actions";
+import "./index.css";
 
-const Profile = () => {
+const Profile = (props) => {
   const img = 'https://avatars.githubusercontent.com/u/79997474?s=64&v=4'
+  
+  let dispatch = useDispatch();
+  let store = useSelector(state=>state);
+  let payload = store.user;
+  let user = payload.data;
+
+  useEffect(()=>{
+    dispatch(UserDispatch.getUser({
+      user: "Enobaks"
+    }))
+  },[dispatch]);
+
   return (
     <div className="profile-wrap">
       <div className="row fate">
@@ -10,13 +24,13 @@ const Profile = () => {
           <div className="list-wrap">
             <ul className="route-links">
               <li>
-                <i class="fa-light fa-book-open"></i>Overview
+                <i className="fa-light fa-book-open"></i>Overview
               </li>
               <li>
-                <i class="fa-light fa-book-bookmark"></i>Repositories
+                <i className="fa-light fa-book-bookmark"></i>Repositories
               </li>
               <li>
-                <i class="fa-light fa-table-layout"></i>Projects
+                <i className="fa-light fa-table-layout"></i>Projects
               </li>
               <li>
                 <i className="fa-light fa-cube"></i>Packages
@@ -48,7 +62,7 @@ const Profile = () => {
               version="1.1"
               width="16"
               data-view-component="true"
-              class="octicon octicon-people"
+              className="octicon octicon-people"
             >
               <path
                 fill-rule="evenodd"
@@ -81,7 +95,7 @@ const Profile = () => {
             <div className="star">
               <div className="obj">
                 <p>
-                  <i class="fa-light fa-star"></i>Star
+                  <i className="fa-light fa-star"></i>Star
                 </p>
                 <select name="" id="">
                   <option value="">Future ideas</option>
